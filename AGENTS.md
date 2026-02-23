@@ -9,8 +9,8 @@ This repository is a template for building and publishing widgets. Widgets are d
 
 **IMPORTANT**: For anything beyond basic widget scaffolding (`widget.json` + `dist/content.html`), always fetch and consult the official documentation first. It covers widget setup, connectors, secrets, SDK, security, caching, publishing workflows, and recipes.
 
-- **Human-readable docs**: https://widget-service.insided.com/docs
-- **LLM-optimized full text**: https://widget-service.insided.com/docs/llms-full.txt
+- **Human-readable docs**: https://developers.insided.com/docs
+- **LLM-optimized full text**: https://developers.insided.com/docs/llms-full.txt
 
 Use the WebFetch tool with the LLM-optimized URL to retrieve documentation. The official docs contain authoritative, up-to-date information that supersedes this file.
 
