@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "title": "React Widget",
   "description": "A React widget using the ESM module pattern with Widget SDK",
-  "category": "Demo",
+  "category": "Custom",
   "imageSrc": "thumbnail.png",
   "source": {
     "path": "dist",
