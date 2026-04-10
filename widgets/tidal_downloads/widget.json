@@ -1,0 +1,20 @@
+{
+    "version": "1.0.0",
+    "title": "Tidal Downloads Widget",
+    "description": "React widget for the Tidal Downloads Page",
+    "category": "Custom",
+    "imageName": "dynamic_content",
+    "source": {
+      "path": "dist",
+      "entry": "index.html"
+    },
+    "settings":{
+        "configurable": false,
+        "editable": false,
+        "removable": true,
+        "shared": false,
+        "movable": true,
+        "container": false
+    }
+  }
+  

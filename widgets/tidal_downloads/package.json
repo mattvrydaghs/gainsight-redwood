@@ -1,0 +1,31 @@
+{
+  "name": "tidal_downloads",
+  "version": "1.0.0",
+  "description": "Tidal Downloads custom page",
+  "homepage": "https://github.com/mattvrydaghs/gainsight-redwood#readme",
+  "bugs": {
+    "url": "https://github.com/mattvrydaghs/gainsight-redwood/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattvrydaghs/gainsight-redwood.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.7"
+  }
+}
