@@ -7994,8 +7994,8 @@ var e = (e, t) => () => (t || e((t = { exports: {} }).exports, t), t.exports), t
 	}
 	n(), t.exports = s();
 })), l = /* @__PURE__ */ e(((e) => {
-	var t = Symbol.for("react.transitional.element");
-	function n(e, n, r) {
+	var t = Symbol.for("react.transitional.element"), n = Symbol.for("react.fragment");
+	function r(e, n, r) {
 		var i = null;
 		if (r !== void 0 && (i = "" + r), n.key !== void 0 && (i = "" + n.key), "key" in n) for (var a in r = {}, n) a !== "key" && (r[a] = n[a]);
 		else r = n;
@@ -8007,16 +8007,53 @@ var e = (e, t) => () => (t || e((t = { exports: {} }).exports, t), t.exports), t
 			props: r
 		};
 	}
-	e.jsx = n, e.jsxs = n;
+	e.Fragment = n, e.jsx = r, e.jsxs = r;
 })), u = /* @__PURE__ */ e(((e, t) => {
 	t.exports = l();
-})), d = c(), f = u();
-async function p(e) {
+})), d = c();
+i();
+var f = u(), p = () => /* @__PURE__ */ (0, f.jsx)("svg", {
+	width: "13",
+	height: "13",
+	viewBox: "0 0 13 13",
+	fill: "none",
+	children: /* @__PURE__ */ (0, f.jsx)("path", {
+		d: "M6.5 2v7M3 6l3.5 3.5L10 6M1.5 11h10",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round"
+	})
+}), m = ({ title: e, links: t }) => /* @__PURE__ */ (0, f.jsxs)("div", {
+	className: "td-card",
+	children: [/* @__PURE__ */ (0, f.jsx)("div", {
+		className: "td-card-title",
+		children: e
+	}), /* @__PURE__ */ (0, f.jsx)("div", {
+		className: "td-links",
+		children: t.map((e, t) => /* @__PURE__ */ (0, f.jsxs)("a", {
+			className: "td-link",
+			href: e.url,
+			target: "_blank",
+			rel: "noopener noreferrer",
+			children: [e.icon || /* @__PURE__ */ (0, f.jsx)(p, {}), e.label]
+		}, t))
+	})]
+});
+//#endregion
+//#region src/index.tsx
+async function h(e) {
 	await e.whenReady();
 	let t = (0, d.createRoot)(e.getContainer());
-	t.render(/* @__PURE__ */ (0, f.jsxs)("div", { children: [/* @__PURE__ */ (0, f.jsx)("h1", { children: "Tidal Downloads Widget" }), /* @__PURE__ */ (0, f.jsx)("p", { children: "This widget displays tidal download information." })] })), e.on("destroy", () => {
+	t.render(/* @__PURE__ */ (0, f.jsxs)(f.Fragment, { children: [/* @__PURE__ */ (0, f.jsxs)("div", { children: [/* @__PURE__ */ (0, f.jsx)("h1", { children: "Tidal Downloads Widget" }), /* @__PURE__ */ (0, f.jsx)("p", { children: "This widget displays tidal download information." })] }), /* @__PURE__ */ (0, f.jsx)(m, {
+		title: "Tidal Downloads",
+		links: [{
+			label: "Download Tidal Data",
+			url: "https://example.com/tidal-data.csv"
+		}]
+	})] })), e.on("destroy", () => {
 		t.unmount();
 	});
 }
 //#endregion
-export { p as default };
+export { h as default };
