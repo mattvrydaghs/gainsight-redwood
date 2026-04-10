@@ -7,12 +7,15 @@ export default async function init(sdk: WidgetSDK): Promise<void> {
 
     const root = createRoot(sdk.getContainer());
     root.render(
-        <Card title="Tidal Downloads" links={[
+        <><div>
+            <h1>{"Tidal Downloads Widget"}</h1>
+            <p>{"This widget displays tidal download information."}</p>
+        </div><Card title="Tidal Downloads" links={[
             {
                 label: "Download Tidal Data",
                 url: "https://example.com/tidal-data.csv",
             },
-        ]} /> 
+        ]} /></> 
     );
 
     sdk.on("destroy", () => {
