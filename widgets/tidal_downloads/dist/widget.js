@@ -8048,27 +8048,32 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	})]
 });
 //#endregion
-//#region src/index.tsx
-async function C(e) {
-	let [t, n] = b.useState(!1);
-	await e.whenReady(), (0, b.useEffect)(() => {
+//#region src/App.tsx
+function C({ sdk: e }) {
+	let [t, n] = (0, b.useState)(e.getProps()), [r, i] = (0, b.useState)(!1);
+	return (0, b.useEffect)(() => {
 		if (typeof window.WidgetServiceSDK != "function") {
 			let e = document.createElement("script");
 			e.src = "https://static.customer-hub.northpass.com/widget-sdk/latest/index.umd.js", document.head.appendChild(e), new Promise((t) => e.onload = t).then(() => {
-				n(!0);
+				i(!0);
 			});
 		}
-	}, [t]);
-	let r = (0, y.createRoot)(e.getContainer());
-	r.render(/* @__PURE__ */ (0, x.jsxs)(x.Fragment, { children: [/* @__PURE__ */ (0, x.jsxs)("div", { children: [/* @__PURE__ */ (0, x.jsx)("h1", { children: "Tidal Downloads Widget" }), /* @__PURE__ */ (0, x.jsx)("p", { children: "This widget displays tidal download information. Is ready? {" + t + "}" })] }), /* @__PURE__ */ (0, x.jsx)(S, {
+	}, [r]), (0, b.useEffect)(() => e.on("propsChanged", n), [e]), /* @__PURE__ */ (0, x.jsxs)(x.Fragment, { children: [/* @__PURE__ */ (0, x.jsxs)("div", { children: [/* @__PURE__ */ (0, x.jsx)("h1", { children: "Tidal Downloads Widget" }), /* @__PURE__ */ (0, x.jsx)("p", { children: "This widget displays tidal download information. Is ready? {" + r + "}" })] }), /* @__PURE__ */ (0, x.jsx)(S, {
 		title: "Tidal Downloads",
 		links: [{
 			label: "Download Tidal Data",
 			url: "https://example.com/tidal-data.csv"
 		}]
-	})] })), e.on("destroy", () => {
-		r.unmount();
+	})] });
+}
+//#endregion
+//#region src/index.tsx
+async function te(e) {
+	await e.whenReady();
+	let t = (0, y.createRoot)(e.getContainer());
+	t.render(/* @__PURE__ */ (0, x.jsx)(C, { sdk: e })), e.on("destroy", () => {
+		t.unmount();
 	});
 }
 //#endregion
-export { C as default };
+export { te as default };
