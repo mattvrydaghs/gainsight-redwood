@@ -1,0 +1,48 @@
+{
+    "versions": [
+        {
+            "version": "1.0.0",
+            "title": "Tidal Downloads",
+            "description": "A custom page widget for Tidal Downloads",
+            "releaseDate": "2024-06-01"
+        },
+        {
+            "version": "1.1.0",
+            "title": "Tidal Downloads",
+            "description": "Added new features and improvements to the Tidal Downloads widget",
+            "releaseDate": "2024-07-15"
+        }
+    ],
+    "download_groups":[
+        {
+            "group_name": "Client Manager",
+            "files": [
+                {
+                    "file_name": "Windows & Linux",
+                    "url": "https://example.com/downloads/tidal_downloads_v1.0.0.zip",
+                    "hotfix": false
+                }
+            ]
+        },
+        {
+            "group_name": "Master",
+            "files": [
+                {
+                    "file_name": "Windows - Master & Fault Monitor",
+                    "url": "https://example.com/downloads/tidal_downloads_v1.1.0.zip",
+                    "hotfix": false
+                },
+                {
+                    "file_name": "Linux Installer",
+                    "url": "https://example.com/downloads/tidal_downloads_v1.1.0_linux.zip",
+                    "hotfix": false
+                },
+                {
+                    "file_name": "Cumulative Hotfix 2026.1.3",
+                    "url": "https://example.com/downloads/tidal_downloads_v1.1.1_hotfix.zip",
+                    "hotfix": true
+                }
+            ]
+        }
+    ]
+}
