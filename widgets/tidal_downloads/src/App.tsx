@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import type { WidgetSDK, WidgetProps } from "./types";
 import { Card } from "./Card";
+import Header from "./Header";
+import Alert from "./Alert";
 
 export function App({sdk}: {sdk: WidgetSDK}) {
     const [props, setProps] = useState<WidgetProps>(sdk.getProps());
@@ -33,10 +35,9 @@ export function App({sdk}: {sdk: WidgetSDK}) {
     }, [isReady]);
     useEffect(() => sdk.on("propsChanged", setProps), [sdk]);
     return (
-        <><div>
-            <h1>{"Tidal Downloads Widget"}</h1>
-            <p>{"This widget displays tidal download information. Is ready? {" + isReady + "}"}</p>
-        </div>
+        <>
+        <Header product_name="Tidal Automation" release_date="Feb 19, 2026" isLatest={true} version="" />
+        <Alert message="This is from React!" />
         <Card title="Tidal Downloads" links={[
             {
                 label: "Download Tidal Data",
