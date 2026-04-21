@@ -36,7 +36,7 @@ export function App({sdk}: {sdk: WidgetSDK}) {
     useEffect(() => sdk.on("propsChanged", setProps), [sdk]);
     return (
         <>
-        <Header product_name="Tidal Automation" release_date="Feb 19, 2026" isLatest={true} version="" />
+        <Header product_name="Tidal Automation" release_date="Feb 32, 2026" isLatest={true} version="2026.99" />
         <Alert message="This is from React!" />
         <Card title="Tidal Downloads" links={[
             {

@@ -8118,9 +8118,9 @@ function re({ sdk: e }) {
 	}, [r]), (0, b.useEffect)(() => e.on("propsChanged", n), [e]), /* @__PURE__ */ (0, x.jsxs)(x.Fragment, { children: [
 		/* @__PURE__ */ (0, x.jsx)(C, {
 			product_name: "Tidal Automation",
-			release_date: "Feb 19, 2026",
+			release_date: "Feb 32, 2026",
 			isLatest: !0,
-			version: ""
+			version: "2026.99"
 		}),
 		/* @__PURE__ */ (0, x.jsx)(ne, { message: "This is from React!" }),
 		/* @__PURE__ */ (0, x.jsx)(S, {
