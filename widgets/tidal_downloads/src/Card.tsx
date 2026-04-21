@@ -28,6 +28,7 @@ export const Card: React.FC<CardProps> = ({ title, links }) => {
           >
             {link.icon || <DownloadIcon />}
             {link.label}
+            {link.hotfix && <span className="td-hotfix-chip">HOTFIX</span>}
           </a>
         ))}
       </div>

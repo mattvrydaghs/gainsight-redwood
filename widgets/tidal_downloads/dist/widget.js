@@ -8043,7 +8043,14 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			href: e.url,
 			target: "_blank",
 			rel: "noopener noreferrer",
-			children: [e.icon || /* @__PURE__ */ (0, x.jsx)(ee, {}), e.label]
+			children: [
+				e.icon || /* @__PURE__ */ (0, x.jsx)(ee, {}),
+				e.label,
+				e.hotfix && /* @__PURE__ */ (0, x.jsx)("span", {
+					className: "td-hotfix-chip",
+					children: "HOTFIX"
+				})
+			]
 		}, t))
 	})]
 });
