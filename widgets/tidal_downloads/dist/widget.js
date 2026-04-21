@@ -8057,7 +8057,7 @@ function C({ sdk: e }) {
 			e.src = "https://static.customer-hub.northpass.com/widget-sdk/latest/index.umd.js", document.head.appendChild(e), new Promise((t) => e.onload = t).then(() => {
 				i(!0);
 			});
-		}
+		} else i(!0);
 	}, [r]), (0, b.useEffect)(() => e.on("propsChanged", n), [e]), /* @__PURE__ */ (0, x.jsxs)(x.Fragment, { children: [/* @__PURE__ */ (0, x.jsxs)("div", { children: [/* @__PURE__ */ (0, x.jsx)("h1", { children: "Tidal Downloads Widget" }), /* @__PURE__ */ (0, x.jsx)("p", { children: "This widget displays tidal download information. Is ready? {" + r + "}" })] }), /* @__PURE__ */ (0, x.jsx)(S, {
 		title: "Tidal Downloads",
 		links: [{

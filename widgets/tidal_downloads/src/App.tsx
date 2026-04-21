@@ -15,6 +15,8 @@ export function App({sdk}: {sdk: WidgetSDK}) {
                 new Promise(resolve => script.onload = resolve).then(() => {
                     setReady(true);
                 });
+            } else {
+                setReady(true);
             }
         }, [isReady]);
 
