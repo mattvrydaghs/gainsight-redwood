@@ -5,6 +5,7 @@ interface CardLink {
   label: string;
   url: string;
   icon?: React.ReactNode;
+  hotfix?: boolean;
 }
 
 export interface CardProps {
@@ -20,7 +21,7 @@ export const Card: React.FC<CardProps> = ({ title, links }) => {
         {links.map((link, index) => (
           <a
             key={index}
-            className="td-link"
+            className={`td-link ${link.hotfix ? 'hotfix' : ''}`}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"

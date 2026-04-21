@@ -42,6 +42,11 @@ export function App({sdk}: {sdk: WidgetSDK}) {
                 label: "Download Tidal Data",
                 url: "https://example.com/tidal-data.csv",
             },
+            {
+                label: "Tidal Data API",
+                url: "https://api.example.com/tidal-data",
+                hotfix: true,
+            }
         ]} /></> 
     );
 }

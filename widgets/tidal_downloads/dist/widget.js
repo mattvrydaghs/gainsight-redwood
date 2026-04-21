@@ -8039,7 +8039,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}), /* @__PURE__ */ (0, x.jsx)("div", {
 		className: "td-links",
 		children: t.map((e, t) => /* @__PURE__ */ (0, x.jsxs)("a", {
-			className: "td-link",
+			className: `td-link ${e.hotfix ? "hotfix" : ""}`,
 			href: e.url,
 			target: "_blank",
 			rel: "noopener noreferrer",
@@ -8072,6 +8072,10 @@ function C({ sdk: e }) {
 		links: [{
 			label: "Download Tidal Data",
 			url: "https://example.com/tidal-data.csv"
+		}, {
+			label: "Tidal Data API",
+			url: "https://api.example.com/tidal-data",
+			hotfix: !0
 		}]
 	})] });
 }
