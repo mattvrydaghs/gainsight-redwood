@@ -8058,6 +8058,15 @@ function C({ sdk: e }) {
 				i(!0);
 			});
 		} else i(!0);
+	}, [r]), (0, b.useEffect)(() => {
+		r && new window.WidgetServiceSDK().connectors.execute({
+			permalink: "salesforce",
+			method: "GET"
+		}).then((e) => {
+			console.log("Tidal Downloads Data:", e);
+		}).catch((e) => {
+			console.error("Error fetching tidal downloads data:", e);
+		});
 	}, [r]), (0, b.useEffect)(() => e.on("propsChanged", n), [e]), /* @__PURE__ */ (0, x.jsxs)(x.Fragment, { children: [/* @__PURE__ */ (0, x.jsxs)("div", { children: [/* @__PURE__ */ (0, x.jsx)("h1", { children: "Tidal Downloads Widget" }), /* @__PURE__ */ (0, x.jsx)("p", { children: "This widget displays tidal download information. Is ready? {" + r + "}" })] }), /* @__PURE__ */ (0, x.jsx)(S, {
 		title: "Tidal Downloads",
 		links: [{

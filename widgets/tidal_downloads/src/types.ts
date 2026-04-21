@@ -12,3 +12,13 @@ export interface WidgetSDK {
   on(event: string, callback: (data: any) => void): () => void;
   emit(event: string, data?: unknown): void;
 }
+
+declare global {
+  interface Window {
+    WidgetServiceSDK: new () => {
+      connectors: {
+        execute(opts: { permalink: string; method: string }): Promise<any>;
+      };
+    };
+  }
+}

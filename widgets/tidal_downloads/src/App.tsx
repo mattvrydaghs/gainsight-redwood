@@ -19,7 +19,18 @@ export function App({sdk}: {sdk: WidgetSDK}) {
                 setReady(true);
             }
         }, [isReady]);
-
+    useEffect(() => {
+        if (isReady) {
+            new window.WidgetServiceSDK().connectors.execute({
+                permalink: "salesforce",
+                method: "GET",
+            }).then((data) => {
+                console.log("Tidal Downloads Data:", data);
+            }).catch((error) => {
+                console.error("Error fetching tidal downloads data:", error);
+            });
+        }
+    }, [isReady]);
     useEffect(() => sdk.on("propsChanged", setProps), [sdk]);
     return (
         <><div>
