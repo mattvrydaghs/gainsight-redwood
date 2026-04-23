@@ -8096,9 +8096,39 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	children: [/* @__PURE__ */ (0, x.jsx)(te, {}), /* @__PURE__ */ (0, x.jsx)("span", { children: /* @__PURE__ */ (0, x.jsx)("strong", { children: e }) })]
 });
 //#endregion
+//#region src/Dropdown.tsx
+function re({ label: e, options: t, value: n, onChange: r, placeholder: i = "Select an option", disabled: a = !1 }) {
+	let [o, s] = (0, b.useState)(n);
+	return (0, b.useEffect)(() => {
+		s(n);
+	}, [n]), /* @__PURE__ */ (0, x.jsxs)("div", {
+		className: "dropdown-container",
+		children: [e && /* @__PURE__ */ (0, x.jsx)("label", {
+			htmlFor: "dropdown-select",
+			children: e
+		}), /* @__PURE__ */ (0, x.jsxs)("select", {
+			id: "dropdown-select",
+			value: String(o || ""),
+			onChange: (e) => {
+				let n = e.target.value, i = t.find((e) => String(e.value) === n), a = i ? i.value : n;
+				s(a), r(a);
+			},
+			disabled: a,
+			className: "dropdown-select",
+			children: [/* @__PURE__ */ (0, x.jsx)("option", {
+				value: "",
+				children: i
+			}), t.map((e) => /* @__PURE__ */ (0, x.jsx)("option", {
+				value: String(e.value),
+				children: e.label
+			}, e.value))]
+		})]
+	});
+}
+//#endregion
 //#region src/App.tsx
-function re({ sdk: e }) {
-	let [t, n] = (0, b.useState)(e.getProps()), [r, i] = (0, b.useState)(!1);
+function w({ sdk: e }) {
+	let [t, n] = (0, b.useState)(e.getProps()), [r, i] = (0, b.useState)(!1), [a, o] = (0, b.useState)();
 	return (0, b.useEffect)(() => {
 		if (typeof window.WidgetServiceSDK != "function") {
 			let e = document.createElement("script");
@@ -8115,35 +8145,65 @@ function re({ sdk: e }) {
 		}).catch((e) => {
 			console.error("Error fetching tidal downloads data:", e);
 		});
-	}, [r]), (0, b.useEffect)(() => e.on("propsChanged", n), [e]), /* @__PURE__ */ (0, x.jsxs)(x.Fragment, { children: [
-		/* @__PURE__ */ (0, x.jsx)(C, {
-			product_name: "Tidal Automation",
-			release_date: "Feb 32, 2026",
-			isLatest: !0,
-			version: "2026.99"
-		}),
-		/* @__PURE__ */ (0, x.jsx)(ne, { message: "This is from React!" }),
-		/* @__PURE__ */ (0, x.jsx)(S, {
-			title: "Tidal Downloads",
-			links: [{
-				label: "Download Tidal Data",
-				url: "https://example.com/tidal-data.csv"
-			}, {
-				label: "Tidal Data API",
-				url: "https://api.example.com/tidal-data",
-				hotfix: !0
-			}]
-		})
-	] });
+	}, [r]), (0, b.useEffect)(() => e.on("propsChanged", n), [e]), /* @__PURE__ */ (0, x.jsx)(x.Fragment, { children: /* @__PURE__ */ (0, x.jsxs)("div", {
+		className: "td-panel",
+		children: [
+			/* @__PURE__ */ (0, x.jsx)(C, {
+				product_name: "Tidal Automation",
+				release_date: "Feb 32, 2026",
+				isLatest: !0,
+				version: "2026.99"
+			}),
+			/* @__PURE__ */ (0, x.jsx)(ne, { message: "This is from React!" }),
+			/* @__PURE__ */ (0, x.jsx)(re, {
+				label: "Select Version",
+				options: [
+					{
+						label: "Version 2026.99",
+						value: "2026.99"
+					},
+					{
+						label: "Version 2026.1",
+						value: "2026.1"
+					},
+					{
+						label: "Version 2025.12",
+						value: "2025.12"
+					}
+				],
+				value: a,
+				onChange: (r) => {
+					o(r);
+					let i = {
+						...t,
+						version: r
+					};
+					n(i), e.emit("propsChanged", i);
+				},
+				placeholder: "Choose a version..."
+			}),
+			/* @__PURE__ */ (0, x.jsx)(S, {
+				title: "Tidal Downloads",
+				links: [{
+					label: "Download Tidal Data",
+					url: "https://example.com/tidal-data.csv"
+				}, {
+					label: "Tidal Data API",
+					url: "https://api.example.com/tidal-data",
+					hotfix: !0
+				}]
+			})
+		]
+	}) });
 }
 //#endregion
 //#region src/index.tsx
-async function w(e) {
+async function ie(e) {
 	await e.whenReady();
 	let t = (0, y.createRoot)(e.getContainer());
-	t.render(/* @__PURE__ */ (0, x.jsx)(re, { sdk: e })), e.on("destroy", () => {
+	t.render(/* @__PURE__ */ (0, x.jsx)(w, { sdk: e })), e.on("destroy", () => {
 		t.unmount();
 	});
 }
 //#endregion
-export { w as default };
+export { ie as default };
