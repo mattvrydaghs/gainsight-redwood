@@ -74,23 +74,8 @@
 }
 
 .td-panel {
-    display: none;
-}
-
-#tdw-v-2026:checked~.td-panel-2026 {
     display: block;
-}
-
-#tdw-v-2025-4:checked~.td-panel-2025-4 {
-    display: block;
-}
-
-#tdw-v-2025-3:checked~.td-panel-2025-3 {
-    display: block;
-}
-
-#tdw-v-2025-1:checked~.td-panel-2025-1 {
-    display: block;
+    max-width: 1140px;
 }
 
 .td-alert {
