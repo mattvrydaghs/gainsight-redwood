@@ -8,7 +8,7 @@ import { Dropdown } from "./Dropdown";
 export function App({sdk}: {sdk: WidgetSDK}) {
     const [props, setProps] = useState<WidgetProps>(sdk.getProps());
     const [isReady, setReady] = useState(false);
-    const [selectedVersion, setSelectedVersion] = useState<string | number>();
+    const [selectedVersion, setSelectedVersion] = useState<string>("");
 
     useEffect(() => {
             //@ts-ignore
@@ -37,7 +37,7 @@ export function App({sdk}: {sdk: WidgetSDK}) {
     }, [isReady]);
     useEffect(() => sdk.on("propsChanged", setProps), [sdk]);
 
-    const handleVersionChange = (value: string | number) => {
+    const handleVersionChange = (value: string) => {
         setSelectedVersion(value);
         // Update the props with the new version
         const updatedProps = { ...props, version: value };
@@ -48,7 +48,7 @@ export function App({sdk}: {sdk: WidgetSDK}) {
     return (
         <>
             <div className="td-panel">
-            <Header product_name="Tidal Automation" release_date="Feb 32, 2026" isLatest={true} version="2026.99" />
+            <Header product_name="Tidal Automation" release_date="Feb 32, 2026" isLatest={true} version={selectedVersion} />
             <Alert message="This is from React!" />
             <Dropdown
               label="Select Version"

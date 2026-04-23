@@ -76,6 +76,7 @@
 .td-panel {
     display: block;
     max-width: 1140px;
+    margin: 0 auto;
 }
 
 .td-alert {

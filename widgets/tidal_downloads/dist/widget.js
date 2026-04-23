@@ -8098,9 +8098,9 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 //#endregion
 //#region src/Dropdown.tsx
 function re({ label: e, options: t, value: n, onChange: r, placeholder: i = "Select an option", disabled: a = !1 }) {
-	let [o, s] = (0, b.useState)(n);
+	let [o, s] = (0, b.useState)(n || "");
 	return (0, b.useEffect)(() => {
-		s(n);
+		s(n || "");
 	}, [n]), /* @__PURE__ */ (0, x.jsxs)("div", {
 		className: "dropdown-container",
 		children: [e && /* @__PURE__ */ (0, x.jsx)("label", {
@@ -8128,7 +8128,7 @@ function re({ label: e, options: t, value: n, onChange: r, placeholder: i = "Sel
 //#endregion
 //#region src/App.tsx
 function w({ sdk: e }) {
-	let [t, n] = (0, b.useState)(e.getProps()), [r, i] = (0, b.useState)(!1), [a, o] = (0, b.useState)();
+	let [t, n] = (0, b.useState)(e.getProps()), [r, i] = (0, b.useState)(!1), [a, o] = (0, b.useState)("");
 	return (0, b.useEffect)(() => {
 		if (typeof window.WidgetServiceSDK != "function") {
 			let e = document.createElement("script");
@@ -8152,7 +8152,7 @@ function w({ sdk: e }) {
 				product_name: "Tidal Automation",
 				release_date: "Feb 32, 2026",
 				isLatest: !0,
-				version: "2026.99"
+				version: a
 			}),
 			/* @__PURE__ */ (0, x.jsx)(ne, { message: "This is from React!" }),
 			/* @__PURE__ */ (0, x.jsx)(re, {
